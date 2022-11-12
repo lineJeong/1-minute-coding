@@ -2,6 +2,7 @@
   let yOffset = 0; // window.pageYOffset 대신 쓸 변수
   let prevScrollHeight = 0; // 현재 스크롤 위치(yOffset)보다 이전에 위치한 스크롤 섹션들의 스크롤 높이값의 합
   let currentScene = 0; // 현재 활성화된 씬(scroll section)
+  let enterNewScene = false; // 새로운 scene이 시작된 순간 true
 
   const sceneInfo = [
     {
@@ -84,6 +85,8 @@
     const values = sceneInfo[currentScene].values;
     const currentYOffset = yOffset - prevScrollHeight;
 
+    console.log(currentScene);
+
     switch (currentScene) {
       case 0:
         // console.log("0 play");
@@ -92,6 +95,7 @@
           currentYOffset
         );
         objs.messageA.style.opacity = messageA_opacity_in;
+        console.log(messageA_opacity_in);
         break;
       case 1:
         // console.log("1 play");
@@ -106,21 +110,26 @@
   };
 
   const scrollLoop = () => {
+    enterNewScene = false;
     prevScrollHeight = 0;
     for (let i = 0; i < currentScene; i++) {
       prevScrollHeight += sceneInfo[i].scrollHeight;
     }
 
     if (yOffset > prevScrollHeight + sceneInfo[currentScene].scrollHeight) {
+      enterNewScene = true;
       currentScene++;
       document.body.setAttribute("id", `show-scene-${currentScene}`);
     }
 
     if (yOffset < prevScrollHeight) {
       if (currentScene === 0) return;
+      enterNewScene = true;
       currentScene--;
       document.body.setAttribute("id", `show-scene-${currentScene}`);
     }
+
+    if (enterNewScene) return;
 
     playAnimation();
   };
