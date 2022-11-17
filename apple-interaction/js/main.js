@@ -103,9 +103,10 @@
     for (let i = 0; i < sceneInfo[0].values.videoImageCount; i++) {
       imgElem = new Image();
       imgElem.src = `./video/001/IMG_${6726 + i}.JPG`;
-      sceneInfo.objs.videoImages.push(imgElem);
+      sceneInfo[0].objs.videoImages.push(imgElem);
     }
   }
+  setCanvasImages();
 
   const setLayout = () => {
     // 각 스크롤 섹션의 높이 세팅
@@ -171,11 +172,14 @@
     const scrollHeight = sceneInfo[currentScene].scrollHeight;
     const scrollRatio = currentYOffset / scrollHeight;
 
-    console.log(currentScene);
-
     switch (currentScene) {
       case 0:
         // console.log('0 play');
+        let sequence = Math.round(
+          calcValues(values.imageSequence, currentYOffset)
+        );
+        objs.context.drawImage(objs.videoImages[sequence], 0, 0);
+
         if (scrollRatio <= 0.22) {
           // in
           objs.messageA.style.opacity = calcValues(
