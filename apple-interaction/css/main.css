@@ -35,7 +35,6 @@ body.before-load {
   height: 44px;
   padding: 0 1rem;
 }
-
 .local-nav {
   position: absolute;
   top: 45px;
@@ -63,25 +62,20 @@ body.before-load {
   height: 100%;
   margin: 0 auto;
 }
-
 .global-nav-links {
   justify-content: space-between;
 }
-
 .local-nav-links .product-name {
   margin-right: auto;
   font-size: 1.2rem;
   font-weight: bold;
 }
-
 .local-nav-links a {
   font-size: 0.8rem;
 }
-
 .local-nav-links a:not(.product-name) {
   margin-left: 2em;
 }
-
 .scroll-section {
   position: relative;
   padding-top: 50vh;
@@ -105,23 +99,19 @@ body.before-load {
   margin: 5px 0;
   opacity: 0;
 }
-
 .main-message p {
   font-weight: bold;
   text-align: center;
   line-height: 1.2;
 }
-
 .main-message small {
   display: block;
   margin-bottom: 0.5em;
   font-size: 1.2rem;
 }
-
 #scroll-section-2 main-message {
   font-size: 3.5rem;
 }
-
 .description {
   max-width: 1000px;
   margin: 0 auto;
@@ -129,36 +119,30 @@ body.before-load {
   font-size: 1.2rem;
   color: #888;
 }
-
 .description strong {
   float: left;
   margin-right: 0.2em;
   font-size: 3rem;
   color: rgb(29, 29, 31);
 }
-
 .desc-message {
   width: 50%;
   font-weight: bold;
   opacity: 0;
 }
-
 .pin {
   width: 1px;
   height: 100px;
   background: rgb(29, 29, 31);
 }
-
 #scroll-section-2 .b {
   top: 10%;
   left: 40%;
 }
-
 #scroll-section-2 .c {
   top: 15%;
   left: 44%;
 }
-
 .mid-message {
   max-width: 1000px;
   margin: 0 auto;
@@ -166,11 +150,9 @@ body.before-load {
   font-size: 2rem;
   color: #888;
 }
-
 .mid-message strong {
   color: rgb(29, 29, 31);
 }
-
 .canvas-caption {
   max-width: 1000px;
   margin: -24rem auto 0;
@@ -178,7 +160,6 @@ body.before-load {
   color: #888;
   font-size: 1.2rem;
 }
-
 .footer {
   display: flex;
   align-items: center;
@@ -187,14 +168,12 @@ body.before-load {
   color: white;
   background: darkorange;
 }
-
 .sticky-elem {
   display: none;
   position: fixed;
   left: 0;
   width: 100%;
 }
-
 #show-scene-0 #scroll-section-0 .sticky-elem,
 #show-scene-1 #scroll-section-1 .sticky-elem,
 #show-scene-2 #scroll-section-2 .sticky-elem,
@@ -202,24 +181,23 @@ body.before-load {
   display: block;
   will-change: transform, opacity;
 }
-
+.scroll-effect-end .sticky-elem {
+  display: none !important;
+}
 .sticky-elem-canvas {
   top: 0;
   height: 100%;
 }
-
 .sticky-elem-canvas canvas {
   position: absolute;
   top: 50%;
   left: 50%;
 }
-
 #scroll-section-3 {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 .image-blend-canvas.sticky {
   position: fixed;
   top: 0;
@@ -278,6 +256,10 @@ body.before-load {
 /* .loading-circle:hover circle {
   stroke-dashoffset: -157;
 } */
+
+.normal-content {
+  margin-bottom: 10rem;
+}
 
 @media (min-width: 1024px) {
   #scroll-section-0 h1 {
